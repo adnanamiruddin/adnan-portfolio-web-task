@@ -2,6 +2,7 @@ const burgerBar = document.querySelector(".burger-bar");
 const listNavMobile = document.querySelector(".list-nav-mobile");
 const navBar = document.querySelector("nav");
 const toolsNavbar = document.querySelectorAll(".tool-navbar");
+const buttonToTop = document.querySelector(".btn-to-top");
 
 let openBurgerBar = false;
 
@@ -70,4 +71,13 @@ const typed = new Typed(".home-span-text", {
   backSpeed: 30,
   backDelay: 1000,
   loop: true,
+});
+
+// Show buttonToTop if scrollY >= 500
+document.addEventListener("scroll", () => {
+  if (window.scrollY >= 500) {
+    buttonToTop.style.opacity = 1;
+  } else {
+    buttonToTop.style.opacity = 0;
+  }
 });
